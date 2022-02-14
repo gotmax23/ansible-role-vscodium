@@ -5,4 +5,4 @@
 repository:
   description: Ansible role that installs vscodium on Linux.
   homepage: https://galaxy.ansible.com/gotmax23/vscodium
-  topics: ansible, molecule, ansible-role, role
+  topics: text_editor, linux, desktop, vscode, code, dev, vscodium, ansible, molecule, ansible-role, role
