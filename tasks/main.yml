@@ -1,0 +1,54 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: MIT
+---
+- name: "{{ installw }} Vscodium repo on RPM-based distributions"
+  when:
+    - ansible_pkg_mgr in [ "dnf", "yum", "zypper" ]
+  block:
+    - name: "{{ installw }} Vscodium RPM key"
+      ansible.builtin.rpm_key:
+        key: "{{ vscodium_key_url }}"
+        fingerprint: "{{ vscodium_key_fingerprint if vscodium_check_key_fingerprint | bool else omit }}"
+        state: "{{ vscodium_state }}"
+
+    - name: Import Vscodium RPM repository
+      when: vscodium_state == "present"
+      ansible.builtin.template:
+        src: vscodium.repo
+        dest: "{{ vscodium_rpm_conf_dest }}"
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Remove Vscodium RPM repository if necessary
+      when: vscodium_state == "absent"
+      ansible.builtin.file:
+        path: "{{ vscodium_rpm_repo_conf_dest }}"
+        state: absent
+
+- name: "{{ installw }} Github CLI repo on Apt-based distributions"
+  when:
+    - ansible_pkg_mgr == "apt"
+  block:
+    - name: Ensure that apt-related deps are installed
+      ansible.builtin.apt:
+        name: [ "apt-transport-https", "ca-certificates", "gpg" ]
+
+    - name: "{{ installw }} Vscodium Apt Key"
+      ansible.builtin.apt_key:
+        url: "{{ vscodium_key_url }}"
+        keyring: "{{ vscodium_apt_key_dest }}"
+        state: "{{ vscodium_state }}"
+
+    - name: "{{ installw }} Vscodium Apt repository"
+      ansible.builtin.apt_repository:
+        state: "{{ vscodium_state }}"
+        repo: "{{ vscodium_apt_repo }}"
+        filename: vscodium
+        update_cache: false  # Package cache refreshed in next task
+
+- name: "{{ installw }} Vscodium package"
+  ansible.builtin.package:
+    state: "{{ vscodium_state }}"
+    name: "{{ vscodium_package_name }}"
+    update_cache: true

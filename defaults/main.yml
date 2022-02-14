@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: CC0-1.0
+---
+# Options:
+# - `present` ensures that Vscodium is installed.
+# - `absent` ensures that Vscodium is not installed.
+vscodium_state: present
+
+# apt/rpm repository mirror url.
+# See https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo#mirrors for a full list.
+vscodium_mirror: https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo
+
+# Whether to check the apt/rpm repo signing key's fingerprint before importing it.
+vscodium_check_key_fingerprint: true

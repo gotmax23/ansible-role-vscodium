@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: MIT
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  tasks:
+    - name: "Include gotmax23.vscodium"
+      ansible.builtin.include_role:
+        name: "gotmax23.vscodium"

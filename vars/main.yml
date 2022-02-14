@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: MIT
+---
+_installw:
+  present: Install
+  absent: Remove
+installw: "{{ _installw[vscodium_state] }}"
+
+## install_method: repo
+vscodium_key_url: "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg"
+vscodium_key_fingerprint: "1302 DE60 2318 89FE 1EBA  CADC 5467 8CF7 5A27 8D9C"
+
+### Vars for RPM-based distros.
+
+_vscodium_rpm_repo_conf_dir:
+  default: /etc/yum.repos.d
+  zypper: /etc/zypp/repos.d
+vscodium_rpm_repo_conf_dir: "{{ _vscodium_rpm_repo_conf_dir[ansible_pkg_mgr] | default(_vscodium_rpm_repo_conf_dir['default']) }}"
+
+vscodium_rpm_conf_dest: "{{ vscodium_rpm_repo_conf_dir }}/codium.repo"
+
+#########
+### Vars for Apt-based distros
+vscodium_apt_key_dest: "/usr/share/keyrings/vscodium-archive-keyring.gpg"
+
+vscodium_apt_repo: "deb [signed-by={{ vscodium_apt_key_dest }}] {{ vscodium_mirror }}/debs vscodium main"
+
+##########
+
+_vscodium_package_name:
+  Archlinux: code
+  default: codium
+
+vscodium_package_name: "{{ _vscodium_package_name[ansible_distribution] | default(_vscodium_package_name['default']) }}"
