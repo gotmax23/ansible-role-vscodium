@@ -48,7 +48,7 @@ ansible-galaxy collection install -r requirements.yml
 ## Role Variables
 
 <!--
-SPDX-FileCopyrightText: 2021 Maxwell G (@gotmax23)
+SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
 SPDX-License-Identifier: MIT
 -->
 ### Available Installation Methods
@@ -79,7 +79,7 @@ vscodium_check_key_fingerprint: true
 
 ## Example Playbook
 ``` yaml
-# SPDX-FileCopyrightText: 2021 Maxwell G (@gotmax23)
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
 # SPDX-License-Identifier: CC0-1.0
 ---
 - name: Install Vscodium

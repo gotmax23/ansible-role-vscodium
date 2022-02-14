@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2021 Maxwell G (@gotmax23)
+SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
 SPDX-License-Identifier: MIT
 -->
 ### Available Installation Methods
