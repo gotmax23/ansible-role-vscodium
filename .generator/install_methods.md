@@ -4,4 +4,4 @@ SPDX-License-Identifier: MIT
 -->
 ### Available Installation Methods
 
-This role installs vscodium from the official apt/rpm repo where available. On Archlinux, it installs the `code` package from the distro's official repos.
+This role installs `codium` from upstream's apt/rpm repo where available. On Archlinux, it installs the `code` package from the distro's official repos.

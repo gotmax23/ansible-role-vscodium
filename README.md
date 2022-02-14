@@ -53,7 +53,7 @@ SPDX-License-Identifier: MIT
 -->
 ### Available Installation Methods
 
-This role installs vscodium from the official apt/rpm repo where available. On Archlinux, it installs the `code` package from the distro's official repos.
+This role installs `codium` from upstream's apt/rpm repo where available. On Archlinux, it installs the `code` package from the distro's official repos.
 
 ----
 
@@ -119,7 +119,7 @@ This role is compatible with the following distros:
 ## Author
 Maxwell G (@gotmax23)
 
-[badge-role]: https://img.shields.io/ansible/role/.svg?logo=ansible
+[badge-role]: https://img.shields.io/ansible/role/58040.svg?logo=ansible
 [link-galaxy]: https://galaxy.ansible.com/gotmax23/vscodium
 [badge-github-repo]: https://img.shields.io/static/v1?label=GitHub&message=repo&color=blue&logo=github
 [link-github-repo]: https://github.com/gotmax23/ansible-role-vscodium
@@ -134,8 +134,8 @@ Maxwell G (@gotmax23)
 [badge-version]: https://img.shields.io/github/release/gotmax23/ansible-role-vscodium.svg?logo=github
 [link-version]: https://github.com/gotmax23/ansible-role-vscodium/releases/latest
 [badge-commits-since]: https://img.shields.io/github/commits-since/gotmax23/ansible-role-vscodium/latest.svg?logo=github
-[badge-quality]: https://img.shields.io/ansible/quality/.svg?logo=ansible
-[badge-downloads]: https://img.shields.io/ansible/role/d/.svg?logo=ansible
+[badge-quality]: https://img.shields.io/ansible/quality/58040.svg?logo=ansible
+[badge-downloads]: https://img.shields.io/ansible/role/d/58040.svg?logo=ansible
 [badge-molecule-workflow]: https://github.com/gotmax23/ansible-role-vscodium/actions/workflows/molecule.yml/badge.svg?branch=main
 [link-molecule-workflow]: https://github.com/gotmax23/ansible-role-vscodium/actions/workflows/molecule.yml
 [badge-galaxy-workflow]: https://github.com/gotmax23/ansible-role-vscodium/actions/workflows/galaxy.yml/badge.svg
