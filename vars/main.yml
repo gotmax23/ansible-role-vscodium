@@ -17,7 +17,7 @@ _vscodium_rpm_repo_conf_dir:
   zypper: /etc/zypp/repos.d
 vscodium_rpm_repo_conf_dir: "{{ _vscodium_rpm_repo_conf_dir[ansible_pkg_mgr] | default(_vscodium_rpm_repo_conf_dir['default']) }}"
 
-vscodium_rpm_conf_dest: "{{ vscodium_rpm_repo_conf_dir }}/codium.repo"
+vscodium_rpm_conf_dest: "{{ vscodium_rpm_repo_conf_dir }}/vscodium.repo"
 
 #########
 ### Vars for Apt-based distros
